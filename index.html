@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>Movie Web App</title>
+
+    <!-- Linking Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Linking Favicon of the Web App -->
+    <link class="favicon" rel="icon" href="images/Web/favicon.png" type="image/x-icon" />
+
+    <!-- Linking to Font Awesome CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Linking to Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Linking JavaScript file -->
+    <script src="index.js" type="module" defer></script>
+  </head>
+  <body>
+    <!-- Section containing Navbar and Search bar -->
+    <section>
+      <!-- Navbar -->
+      <nav class="navbar nav-container" id="nav">
+        <a href="index.html" class="logo">
+          <img class="movie-logo homepage" src="images/movie-logo.png" alt="react-movie-logo" />
+        </a>
+        <input type="checkbox" id="toggler" />
+        <label class="top-bars" for="toggler"><i class="ri-menu-line"></i></label>
+
+        <div class="menu">
+          <ul class="list">
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="#footer">About</a></li>
+            <li>
+              <input type="checkbox" id="toggle" class="dark-theme" />
+              <label for="toggle" class="button"></label>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Search bar -->
+      <header>
+        <form id="form" class="form">
+          <img src="images/search-icon.svg" alt="search-icon" id="search-btn" />
+
+          <input type="text" placeholder="Search" id="search" class="search" />
+        </form>
+      </header>
+    </section>
+
+    <!-- Div containing Genres of movies -->
+    <div class="bars-container">
+      <input type="checkbox" id="bars-toggler" />
+      <label class="bars" for="bars-toggler"><i class="ri-menu-line"></i>Genres</label>
+      <div id="tags"></div>
+    </div>
+
+    <!-- Overlay content -->
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="close-btn">
+        <i class="ri-close-line"></i>
+      </a>
+
+      <!-- Dynamic overlay content  -->
+      <div class="overlay-content" id="overlay-content"></div>
+
+      <!-- Left Arrow -->
+      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a>
+
+      <!-- Right Arrow -->
+      <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow">&#8658;</a>
+    </div>
+
+    <!-- Main containing dynamic API content -->
+    <main id="main"></main>
+
+    <!-- Div containing previous and next page buttons -->
+    <div class="pagination">
+      <!-- Previous -->
+      <div class="page" id="prev">Previous</div>
+
+      <!-- Current -->
+      <div class="current" id="current">1</div>
+
+      <!-- Next -->
+      <div class="page" id="next">Next</div>
+    </div>
+
+    <!-- Footer containing Links / Socials / Developers Info -->
+    <footer class="footer" id="footer">
+      <!-- Footer Logo and Email -->
+      <div class="footer__addr">
+        <div class="footer__logo">
+          <img id="homepage" src="images/movie-logo.png" alt="react-movie-logo" />
+        </div>
+
+        <div class="email">
+          <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+        </div>
+      </div>
+
+      <ul class="footer__nav">
+        <!-- Socials Links -->
+        <li class="footer_nav_item">
+          <h2 class="footer_nav_title">Social Links</h2>
+          <ul class="footer_nav_ul">
+            <li>
+              <a href="https://www.instagram.com/" title="Instagram" rel="noopener" target="_blank"
+                ><i class="fa fa-instagram"></i>Instagram</a
+              >
+            </li>
+
+            <li>
+              <a href="https://www.github.com/?hl=en" title="Github" rel="noopener" target="_blank"
+                ><i class="fa fa-github"></i>Github</a
+              >
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/" title="LinkedIn" rel="noopener" target="_blank"
+                ><i class="fa fa-linkedin"></i>LinkedIn</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Resources Used -->
+        <li class="footer_nav_item">
+          <h2 class="footer_nav_title">Resources</h2>
+
+          <ul class="footer_nav_ul">
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://www.themoviedb.org/documentation/api"
+                target="_blank"
+                rel="noopener"
+                >API</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener"
+                >Google</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Technologies Used -->
+        <li class="footer_nav_item">
+          <h2 class="footer_nav_title">Technology</h2>
+
+          <ul class="footer_nav_ul">
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                target="_blank"
+                rel="noopener"
+                >HTML</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                target="_blank"
+                rel="noopener"
+                >CSS</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noopener"
+                >JavaScript</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- API Information -->
+        <li class="footer_nav_item">
+          <h2 class="footer_nav_title">API</h2>
+
+          <ul class="footer_nav_ul">
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://www.themoviedb.org/signup"
+                target="_blank"
+                rel="noopener"
+                >Sign-up</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://developers.themoviedb.org/3/certifications/get-movie-certifications"
+                target="_blank"
+                rel="noopener"
+                >Certifications</a
+              >
+            </li>
+
+            <li>
+              <a
+                class="footer-menu-links"
+                href="https://developers.themoviedb.org/3/getting-started/introduction"
+                target="_blank"
+                rel="noopener"
+                >Documentation</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- API Provider -->
+        <li class="footer_nav_item">
+          <h2 class="footer_nav_title">Powered by</h2>
+          <ul class="footer_nav_ul">
+            <li>
+              <img src="./images/tmdb-logo.svg" alt="TMDB" />
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Developers Information -->
+      <div class="legal">
+        <p id="dev-info">
+          #Developed and Designed by <strong>Saksham Singh</strong> &
+          <strong>Amit Kumar</strong>
+        </p>
+        <div class="legal__links"></div>
+      </div>
+    </footer>
+  </body>
+</html>
