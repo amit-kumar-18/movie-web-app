@@ -1,4 +1,4 @@
-# Weather Web App
+# Movie Web App
 
 ![Design preview for the Weather Web App](public/images/Homepage.png)
 
